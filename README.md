@@ -5,10 +5,10 @@ TerpSpace is a real-time API designed to provide classroom availability informat
 During the middle of the day, students, like myself, often want to privately study or have meetings on campus and so they look for empty classrooms that are not being used. UMD doesn't provide a convenient way to find an available room near them. This API helps in designing an application that could help students find a room for a specified time.
 
 ## Key Features:
-Real-time data scraping from UMD’s 25Live platform.
-GET requests to check room availability for a specific building and time.
-Publicly accessible and hosted on Render ==> [https://terpspace.onrender.com/]([url](https://terpspace.onrender.com/api/availability))
-Tested using Postman for consistent, reliable results.
+- Real-time data scraping from UMD’s 25Live platform.
+- GET requests to check room availability for a specific building and time.
+- Publicly accessible and hosted on Render ==> [https://terpspace.onrender.com/]([url](https://terpspace.onrender.com/api/availability))
+- Tested using Postman for consistent, reliable results.
 
 ## API Documentation
 
