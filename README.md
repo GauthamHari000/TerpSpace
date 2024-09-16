@@ -11,5 +11,5 @@ During the middle of the day, students, like myself, often want to privately stu
 - Tested using Postman for consistent, reliable results.
 
 ## API Documentation
-
+[Click Here To Test API On Postman](https://www.postman.com/api-showcase-1803/terpspace/collection/fu8qdee/terpspace-api-call?action=share&creator=38362388)
 [<img src="https://run.pstmn.io/button.svg" alt="Run In Postman" style="width: 128px; height: 32px;">](https://god.gw.postman.com/run-collection/38362388-70a7bd52-f8d7-459a-9aab-6f36555df169?action=collection%2Ffork&source=rip_markdown&collection-url=entityId%3D38362388-70a7bd52-f8d7-459a-9aab-6f36555df169%26entityType%3Dcollection%26workspaceId%3D788b4915-d531-40b0-aff7-e90479d89977)
