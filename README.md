@@ -16,3 +16,6 @@ During the middle of the day, students, like myself, often want to privately stu
 
 
 [<img src="https://run.pstmn.io/button.svg" alt="Run In Postman" style="width: 128px; height: 32px;">](https://www.postman.com/api-showcase-1803/terpspace/collection/fu8qdee/terpspace-api-call?action=share&creator=38362388)
+
+Try it out yourself by entering this link in your browser, feel free to change the ID, start time, and end time. 
+```https://terpspace.onrender.com/api/availability/?id=3032&start_time=2024-09-15T00:00:00&end_time=2024-09-15T23:59:59```
