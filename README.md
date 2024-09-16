@@ -21,6 +21,6 @@ Try it out yourself by entering this link in your browser, feel free to change t
 ```https://terpspace.onrender.com/api/availability/?id=3032&start_time=2024-09-15T00:00:00&end_time=2024-09-15T23:59:59```
 
 Some ID's include: 
-```3032``` IRB 0318
-```1844``` MMH 0108
-```2950``` ESJ 0215
+- ```3032``` IRB 0318
+- ```1844``` MMH 0108
+- ```2950``` ESJ 0215
