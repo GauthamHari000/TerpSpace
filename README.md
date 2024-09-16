@@ -15,5 +15,4 @@ During the middle of the day, students, like myself, often want to privately stu
 ![Recording 2024-09-16 at 1 02 22 PM](https://github.com/user-attachments/assets/2e56e1dd-a661-40db-93fa-2e6d39f47f01)
 
 
-[Click Here To Test API On Postman](https://www.postman.com/api-showcase-1803/terpspace/collection/fu8qdee/terpspace-api-call?action=share&creator=38362388)
 [<img src="https://run.pstmn.io/button.svg" alt="Run In Postman" style="width: 128px; height: 32px;">](https://www.postman.com/api-showcase-1803/terpspace/collection/fu8qdee/terpspace-api-call?action=share&creator=38362388)
