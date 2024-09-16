@@ -7,7 +7,7 @@ During the middle of the day, students, like myself, often want to privately stu
 ## Key Features:
 - Real-time data scraping from UMD’s 25Live platform.
 - GET requests to check room availability for a specific building and time.
-- Publicly accessible and hosted on Render ==> [https://terpspace.onrender.com/]([url](https://terpspace.onrender.com/api/availability))
+- Publicly accessible and hosted on Render ==> [https://terpspace.onrender.com]([url](https://terpspace.onrender.com/api/availability))
 - Tested using Postman for consistent, reliable results.
 
 ## API Documentation
