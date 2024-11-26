@@ -18,6 +18,7 @@ Students and faculty at UMD often struggle to find available classrooms for stud
 ## Redis Caching Performance Improvement 
 ![image](https://github.com/user-attachments/assets/385de2c8-7638-4284-bb97-67575c0e2144)
 
+Went from 2317 ms to 439 ms
 ## Test It Out
 [<img src="https://run.pstmn.io/button.svg" alt="Run In Postman" style="width: 128px; height: 32px;">](https://god.gw.postman.com/run-collection/38362388-70a7bd52-f8d7-459a-9aab-6f36555df169?action=collection%2Ffork&source=rip_markdown&collection-url=entityId%3D38362388-70a7bd52-f8d7-459a-9aab-6f36555df169%26entityType%3Dcollection%26workspaceId%3D788b4915-d531-40b0-aff7-e90479d89977)
 
