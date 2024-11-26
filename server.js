@@ -5,12 +5,11 @@ const { exec } = require('child_process');
 const path = require('path');
 const fs = require('fs');
 const os = require('os');
-const redis = require('redis'); // Add redis import
+const redis = require('redis'); 
 
 const app = express();
 const port = 3000;
 
-// Middleware
 app.use(bodyParser.json());
 
 const redisClient = redis.createClient({
@@ -22,10 +21,9 @@ redisClient.on('error', (err) => {
 });
 redisClient.connect().catch(console.error);
 
-// Helper function to check cache
 async function checkCache(cacheKey) {
   if (!redisClient.isOpen) {
-    await redisClient.connect(); // Reconnect if Redis is not open
+    await redisClient.connect(); 
   }
   try {
     const data = await redisClient.get(cacheKey);
@@ -36,10 +34,9 @@ async function checkCache(cacheKey) {
   }
 }
 
-// Helper function to set the cache with TTL
 async function setCache(cacheKey, data) {
   try {
-    await redisClient.setEx(cacheKey, 3600, JSON.stringify(data)); // Set cache with TTL (1 hour)
+    await redisClient.setEx(cacheKey, 3600, JSON.stringify(data)); 
     console.log('Cache set');
   } catch (err) {
     console.error('Error setting cache:', err);
@@ -53,35 +50,31 @@ app.get('/api/availability', async (req, res) => {
   if (!id || !start_time || !end_time) {
     return res.status(400).json({ error: 'Missing required query parameters' });
   }
-  const startDate = start_time.split('T')[0]; // YYYY-MM-DD format
-  const cacheKey = `${id}:${startDate}`; // Unique cache key based on room ID and date
+  const startDate = start_time.split('T')[0]; 
+  const cacheKey = `${id}:${startDate}`; 
 
   let response = null;
   try {
     const cachedTimes = await checkCache(cacheKey);
     if (cachedTimes) {
       console.log('Cache hit for', cacheKey);
-      response = cachedTimes; // Use cached data
+      response = cachedTimes; 
     } else {
-      // Build URL with dynamic space_id
       const url = `https://25live.collegenet.com/25live/data/umd/run/availability/availabilitydata.json?obj_cache_accl=0&start_dt=${startDate}&comptype=availability_daily&compsubject=location&page_size=100&space_id=${id}&include=closed+blackouts+pending+related+empty&caller=pro-AvailService.getData`;
 
-      // Fetch data from the URL
       const api_response = await axios.get(url);
       response = api_response.data;
-      await setCache(cacheKey, response); // Set cache for 1 hour
+      await setCache(cacheKey, response); 
     }
 
-    // Write data to a temporary file
     const tempFilePath = path.join(os.tmpdir(), 'data.json');
     fs.writeFileSync(tempFilePath, JSON.stringify(response));
 
-    // Execute the Python script
     const pythonScriptPath = path.join(__dirname, 'preprocess.py');
     const pythonCommand = `python ${pythonScriptPath} ${tempFilePath} ${start_time} ${end_time}`;
 
     exec(pythonCommand, (error, stdout, stderr) => {
-      fs.unlinkSync(tempFilePath); // Clean up temporary file
+      fs.unlinkSync(tempFilePath); 
       if (error) {
         console.error(`exec error: ${error}`);
         return res.status(500).send('Internal Server Error');
@@ -106,7 +99,6 @@ app.get('/api/availability', async (req, res) => {
   }
 });
 
-// Start the server
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
 });
