@@ -11,6 +11,7 @@ Students and faculty at UMD often struggle to find available classrooms for stud
 - Scrapes UMD's 25Live platform for meeting data based on user's specified room and date
 - Utilized a Python preprocessing script to check if there is an opening between a specified ***start_time*** and ***end_time***
 - Implemented Redis caching to reduce external API calls (ie. if a user makes a subsequent call to the same building at a different time, why make an API call when we can keep a cache of recently requested items? We know that meeting times are not constantly changing in a given day)
+    - Based on testing, subsequent calls went from 3 seconds to 0.4 seconds (86% improvement) 
 - Utilized Postman for testing and debugging the API
 - Deployed on Render for public access
 
